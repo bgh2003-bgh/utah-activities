@@ -1,0 +1,11 @@
+body{
+    background-color: antiquewhite;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:#333;
+    padding: 20px;
+}
+
+.section{
+    border:1px solid #442d43
+    
+}
