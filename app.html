@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Utah Activity by Date</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 40px;
+      background-color: #f9f9f9;
+      text-align: center;
+      transition: background-color 0.5s ease;
+    }
+
+    h1 {
+      transition: color 0.5s ease;
+    }
+
+    #activity-box {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 70%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      font-size: 1.2rem;
+    }
+
+    input[type="date"] {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 12px;
+    }
+
+    button {
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      color: white;
+    }
+
+    #historySection {
+      margin-top: 30px;
+      text-align: left;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .history-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .clear-btn {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      background-color: #888;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="header">Find a Utah Adventure Based on Date</h1>
+  <p>Select a date and we’ll suggest an activity suited for the season!</p>
+
+  <input type="date" id="dateInput" />
+  <br>
+  <button id="suggestBtn" onclick="suggestActivityByDate()">Suggest Activity</button>
+
+  <div id="activity-box">Your activity will appear here...</div>
+
+  <div id="historySection">
+    <div class="history-title">
+      Suggested Activities:
+      <button class="clear-btn" onclick="clearHistory()">Clear History</button>
+    </div>
+    <ul id="historyList"></ul>
+  </div>
+
+  <script>
+    const activities = {
+      winter: [
+        "Snowshoe through the Wasatch Mountains",
+        "Ski at Park City or Snowbird",
+        "Relax in Homestead Crater hot springs"
+      ],
+      spring: [
+        "Hike Angel’s Landing in Zion",
+        "Visit the tulip festival at Thanksgiving Point",
+        "Explore Arches National Park"
+      ],
+      summer: [
+        "Go tubing down the Provo River",
+        "Swim in Bear Lake",
+        "Camp and paddleboard at Jordanelle Reservoir"
+      ],
+      fall: [
+        "Bike the Slickrock Trail in Moab",
+        "Rock climb in Maple Canyon",
+        "Take a scenic drive through Big Cottonwood Canyon"
+      ]
+    };
+
+    const seasonStyles = {
+      winter: {
+        bgColor: "#e0f7fa",
+        buttonColor: "#00796b",
+        headerColor: "#004d40"
+      },
+      spring: {
+        bgColor: "#f1f8e9",
+        buttonColor: "#558b2f",
+        headerColor: "#33691e"
+      },
+      summer: {
+        bgColor: "#fff3e0",
+        buttonColor: "#f57c00",
+        headerColor: "#e65100"
+      },
+      fall: {
+        bgColor: "#fbe9e7",
+        buttonColor: "#d84315",
+        headerColor: "#bf360c"
+      }
+    };
+
+    function suggestActivityByDate() {
+      const dateInput = document.getElementById("dateInput").value;
+
+      if (!dateInput) {
+        document.getElementById("activity-box").textContent = "Please select a date!";
+        return;
+      }
+
+      const month = new Date(dateInput).getMonth(); // 0 = Jan, 11 = Dec
+      let season;
+
+      if (month === 11 || month <= 1) {
+        season = "winter";
+      } else if (month >= 2 && month <= 4) {
+        season = "spring";
+      } else if (month >= 5 && month <= 7) {
+        season = "summer";
+      } else {
+        season = "fall";
+      }
+
+      // Apply seasonal styles
+      const styles = seasonStyles[season];
+      document.body.style.backgroundColor = styles.bgColor;
+      document.getElementById("suggestBtn").style.backgroundColor = styles.buttonColor;
+      document.getElementById("header").style.color = styles.headerColor;
+
+      // Pick a random activity
+      const options = activities[season];
+      const suggestion = options[Math.floor(Math.random() * options.length)];
+      document.getElementById("activity-box").textContent = `Season: ${season.charAt(0).toUpperCase() + season.slice(1)} — ${suggestion}`;
+
+      // Add to history
+      const historyList = document.getElementById("historyList");
+      const li = document.createElement("li");
+      li.textContent = suggestion;
+      historyList.appendChild(li);
+    }
+
+    function clearHistory() {
+      const historyList = document.getElementById("historyList");
+      historyList.innerHTML = ""; // Clear all history entries
+    }
+  </script>
+
+</body>
+</html>
+
+
+
