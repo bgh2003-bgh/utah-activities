@@ -1,30 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Outdoor Activities in Utah</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="startbootstrap-creative-gh-pages/css/styles.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+
 </head>
+
 <body>
-    <h1>Top Outdoor Activities in Utah</h1>
-    
-    <ul>
-        <li><a href="#hiking">Jump to Hiking</a></li>
-        <li><a href="#boating">Jump to Boating</a></li>
-        <li><a href="#video">Watch Climbing Video</a></li>
-    </ul>
-    
-    <ul>
-        <li>Top 3 Activities
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Scratch Page</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="app.html">AI App</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Scratch Page</a></li>
+                    <li class="nav-item"><a class="nav-link" href="professional.html">Résumé</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <h1 class="text-center mb-4">Top Outdoor Activities in Utah</h1>
+
+        <!-- Quick Links -->
+        <div class="list-group mb-4">
+            <a href="#hiking" class="list-group-item list-group-item-action">Jump to Hiking</a>
+            <a href="#boating" class="list-group-item list-group-item-action">Jump to Boating</a>
+            <a href="#video" class="list-group-item list-group-item-action">Watch Climbing Video</a>
+        </div>
+
+        <!-- Top Activities List -->
+        <div class="mb-4">
+            <h3>Top 3 Activities</h3>
             <ol>
                 <li>Hiking</li>
                 <li>Boating</li>
+                    <ul>
+                        <li>Water Skiing</li>
+                        <li>Wakeboarding</li>
+                        <li>Tubing</li>
+                    </ul>
                 <li>Rock Climbing</li>
             </ol>
-        </li>
-        <li>Mighty Five National Parks
+        </div>
+
+        <div class="mb-4">
+            <h3>Mighty Five National Parks</h3>
             <ul>
                 <li>Arches</li>
                 <li>Bryce Canyon</li>
@@ -32,55 +63,68 @@
                 <li>Capitol Reef</li>
                 <li>Zion</li>
             </ul>
-        </li>
-    </ul>
-    
-    <div class="section" id="hiking">
-        <h2>Hiking in Utah</h2>
-        <p>Utah offers a variety of stunning trails, ranging from half-mile nature walks to muilt-day backpacking adventures. There is a trail for everyone!</p>
-        <img src="images/mother_daughter_hiking.jpg" alt="Mother and daughter hiking in Utah" width="500" />
-    </div>
-    
-    <div class="section" id="boating">
-        <h2>Boating & Lakes</h2>
-        <p>Try Bear Lake or Lake Powell for a boating experience the whole family will remember!</p>
-        <img src="images/family_on_boat.jpg" alt="Family on a boat in Utah" width="500" />
-    </div>
-    
-    <div class="section" id="video">
-        <h2>Rock Climbing in Utah Valley (Video)</h2>
-        <iframe width="560" height="315"
-            src="https://www.youtube.com/watch?v=-77GtebF63o"
-            title="YouTube Video" framevorder="0"
-            allowfullscreen></iframe>
+        </div>
+
+        <!-- Hiking Section -->
+        <div class="section" id="hiking">
+            <h2 class="text-primary">Hiking in Utah</h2>
+            <p>Utah offers a variety of stunning trails, ranging from half-mile nature walks to multi-day backpacking adventures. There is a trail for everyone!</p>
+            <img src="images/mother_daughter_hiking.jpg" alt="Mother and daughter hiking in Utah" class="img-fluid rounded">
+        </div>
+
+        <!-- Boating Section -->
+        <div class="section" id="boating">
+            <h2 class="text-primary">Boating & Lakes</h2>
+            <p>Try Bear Lake or Lake Powell for a boating experience the whole family will remember!</p>
+            <img src="images/family_on_boat.jpg" alt="Family on a boat in Utah" class="img-fluid rounded">
+        </div>
+
+        <!-- Rock Climbing Video -->
+        <div class="section" id="video">
+            <h2 class="text-primary">Rock Climbing in Utah Valley (Video)</h2>
+            <iframe src="https://www.youtube.com/watch?v=-77GtebF63o" title="YouTube Video" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!-- Tableau Embed -->
+        <div class="section" id="tableau">
+            <h2 class="text-primary">Weather Trends in Utah</h2>
+            <div class="tableauPlaceholder" id="viz1745352499065" style="position: relative;">
+                <noscript><a href='#'><img alt='Dashboard 1' src='https://public.tableau.com/static/images/Ut/UtahNationalParks_15972940243770/Dashboard1/1_rss.png' style='border: none' /></a></noscript>
+                <object class="tableauViz" style="display:none;">
+                    <param name='host_url' value='https://public.tableau.com/' />
+                    <param name='name' value='UtahNationalParks_15972940243770/Dashboard1' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https://public.tableau.com/static/images/Ut/UtahNationalParks_15972940243770/Dashboard1/1.png' />
+                </object>
+            </div>
+            <script type="text/javascript">
+                var divElement = document.getElementById('viz1745352499065');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                if (divElement.offsetWidth > 800) {
+                    vizElement.style.width = '720px';
+                    vizElement.style.height = '1187px';
+                } else if (divElement.offsetWidth > 500) {
+                    vizElement.style.width = '720px';
+                    vizElement.style.height = '1187px';
+                } else {
+                    vizElement.style.width = '100%';
+                    vizElement.style.height = '1427px';
+                }
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
+        </div>
     </div>
 
-    <div class="section" id="tableau">
-    <h2>Weather Trends in Utah</h2>
-    <div class='tableauPlaceholder' id='viz1745352499065' style='position: relative'>
-        <noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ut&#47;UtahNationalParks_15972940243770&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript>
-        <object class='tableauViz'  style='display:none;'>
-            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-            <param name='embed_code_version' value='3' />
-            <param name='site_root' value='' />
-            <param name='name' value='UtahNationalParks_15972940243770&#47;Dashboard1' />
-            <param name='tabs' value='no' />
-            <param name='toolbar' value='yes' />
-            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ut&#47;UtahNationalParks_15972940243770&#47;Dashboard1&#47;1.png' />
-            <param name='animate_transition' value='yes' />
-            <param name='display_static_image' value='yes' />
-            <param name='display_spinner' value='yes' />
-            <param name='display_overlay' value='yes' />
-            <param name='display_count' value='yes' />
-            <param name='language' value='en-US' />
-        </object>
-    </div>
-    <script type='text/javascript'>var divElement = document.getElementById('viz1745352499065');var vizElement = divElement.getElementsByTagName('object')[0];if ( divElement.offsetWidth > 800 ) { vizElement.style.width='720px';vizElement.style.height='1187px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='720px';vizElement.style.height='1187px';} else { vizElement.style.width='100%';vizElement.style.height='1427px';}var scriptElement = document.createElement('script');scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
-    </div>
-
+    <!-- Footer -->
     <footer>
-        <p>Check out the <a href="app.html">Utah Activity Recommender App</a></p>
+        <p>Check out the <a href="app.html" class="text-white">Utah Activity Recommender App</a></p>
     </footer>
-    
-    </body>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>

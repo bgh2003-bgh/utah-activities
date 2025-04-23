@@ -1,11 +1,133 @@
-body{
-    background-color: antiquewhite;
+body {
+    background-color: #f9f9f9;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:#333;
+    color: #333;
+    margin: 0;
     padding: 20px;
-}
+    padding-top: 80px;
+    transition: background-color 0.5s ease;
+  }
+  
 
-.section{
-    border:1px solid #442d43
-    
-}
+  .section {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 720px;
+  }
+  
+
+  .header {
+    background-color: #8c5e58;
+    padding: 10px;
+    color: white;
+    text-align: center;
+  }
+  
+
+  .content {
+    margin: 20px auto;
+    width: 80%;
+    background-color: #fdf6f0;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+
+  .footer,
+  footer {
+    background-color: #442d43;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+  }
+  
+
+  footer a {
+    color: #f8f9fa;
+  }
+  
+
+  h1 {
+    transition: color 0.5s ease;
+  }
+  
+  h2 {
+    margin-top: 40px;
+  }
+  
+
+  iframe {
+    width: 100%;
+    height: 315px;
+    max-width: 720px;
+    margin: 0 auto;
+    display: block;
+  }
+  
+
+  #activity-box {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 70%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+  }
+  
+
+  input[type="date"] {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 12px;
+  }
+  
+
+  button {
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: white;
+  }
+  
+
+  #historySection {
+    margin-top: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+
+  .history-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  
+
+  .clear-btn {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    background-color: #888;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
